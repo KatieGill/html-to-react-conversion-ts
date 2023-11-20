@@ -1,0 +1,10 @@
+body {
+  min-height: 100%;
+  background-color: tomato;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
