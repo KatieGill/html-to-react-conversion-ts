@@ -1,4 +1,4 @@
-import { Character } from "../character-data";
+import { Character } from "../../../character-data";
 
 export function RatingTableRow({item, isEven} : {item: Character , isEven: boolean}) {
   const skills = item.skillset.join(", ");

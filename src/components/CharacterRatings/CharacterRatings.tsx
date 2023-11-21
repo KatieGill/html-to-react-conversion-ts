@@ -1,17 +1,13 @@
-import "./comp-css/character-ratings.css";
-import { Character } from "../character-data";
-import { RatingTableRow } from "./RatingTableRow";
-
-const sortByVotes = (arr: Character[]) => {
-  return arr.sort(function (a, b) {
-    return b.votes - a.votes;
-  });
-};
+import "./character-ratings.css";
+import { Character } from "../../character-data";
+import { RatingTableRow } from "./components/RatingTableRow";
 
 const getTopFive = (arr: Character[]) => {
-  const sortedArr = sortByVotes([...arr]);
-  const topFive = sortedArr.slice(0, 5);
-  return topFive;
+  return [...arr]
+    .sort(function (a, b) {
+      return b.votes - a.votes;
+    })
+    .slice(0, 5);
 };
 
 type CharacterRatingsProps = {
@@ -30,8 +26,7 @@ export function CharacterRatings({ characters }: CharacterRatingsProps) {
           <th>Votes</th>
         </tr>
         {topFiveArr.map((item: Character, itemIndex) => {
-          const adjIndex = itemIndex + 1;
-          const isEven = adjIndex % 2 === 0;
+          const isEven = itemIndex % 2 !== 0;
           return <RatingTableRow item={item} isEven={isEven} key={item.name} />;
         })}
       </table>

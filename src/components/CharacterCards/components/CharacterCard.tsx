@@ -1,9 +1,9 @@
 import { Component } from "react";
-import { Character } from "../character-data";
+import { Character } from "../../../character-data";
 
 type CharacterCardProps = {
-  item : Character
-}
+  item: Character;
+};
 
 export class CharacterCard extends Component<CharacterCardProps> {
   render() {
@@ -12,7 +12,7 @@ export class CharacterCard extends Component<CharacterCardProps> {
       <div className="card" key={item.name}>
         <div className="card-titles">
           <h3>{item.name}</h3>
-          <h4>{item.nickName}</h4>
+          {item.nickName && <h4>{item.nickName}</h4>}
         </div>
         <img src={item.imageUrl} alt="profile img" />
         <p>{item.background}</p>

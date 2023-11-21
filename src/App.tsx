@@ -1,14 +1,14 @@
 import { characters } from "./character-data";
-import { CharacterCards } from "./components/CharacterCards";
-import { CharacterRatings } from "./components/CharacterRatings";
-
-
+import { Header } from "./components/Header/Header";
+import { CharacterCards } from "./components/CharacterCards/CharacterCards";
+import { CharacterRatings } from "./components/CharacterRatings/CharacterRatings";
 
 function App() {
   return (
     <>
-      <CharacterRatings characters={characters}/>
-      <CharacterCards characters={characters}/>
+      <Header />
+      <CharacterRatings characters={characters} />
+      <CharacterCards characters={characters} />
     </>
   );
 }

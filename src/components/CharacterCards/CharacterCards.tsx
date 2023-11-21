@@ -1,7 +1,7 @@
 import { Component } from "react";
-import "./comp-css/character-cards.css";
-import { Character } from "../character-data";
-import { CharacterCard } from "./CharacterCard";
+import "./character-cards.css"
+import { Character } from "../../character-data";
+import { CharacterCard } from "./components/CharacterCard";
 
 type CharacterCardsProps = {
   characters : Character[]
